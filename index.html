@@ -33,7 +33,7 @@ body{
     background-size:300% 300%;
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
-    animation:titleMove 4s linear infinite;
+    animation:titleMove 3s linear infinite;
     text-align:center;
 }
 
@@ -63,6 +63,18 @@ button{
     color:white;
 }
 
+/* MESSAGE */
+#message{
+    font-weight:bold;
+    text-align:center;
+    animation:fade 1s ease-in-out infinite alternate;
+}
+
+@keyframes fade{
+    from{opacity:0.5}
+    to{opacity:1}
+}
+
 /* APP */
 #app{
     display:none;
@@ -71,13 +83,12 @@ button{
     padding:20px;
 }
 
-/* TOP DEV TEXT */
+/* DEV TEXT */
 #devText{
     font-size:16px;
-    margin-top:10px;
     font-weight:bold;
+    margin-top:10px;
     background:linear-gradient(90deg,#00d4ff,#ffd60a,#ff4d6d,#00ff88);
-    background-size:300% 300%;
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
     animation:titleMove 3s linear infinite;
@@ -88,12 +99,9 @@ button{
     font-size:120px;
     font-weight:bold;
     margin-top:20px;
-
     background:linear-gradient(90deg,#00d4ff,#ffd60a,#ff006e,#00ff88);
-    background-size:300% 300%;
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
-
     animation:float 1s infinite alternate, colorMove 3s linear infinite;
 }
 
@@ -113,18 +121,17 @@ button{
     color:#ffd60a;
 }
 
-/* LIVE TEXT */
+/* LIVE */
 #liveText{
-    margin-top:5px;
     font-size:14px;
     color:#00b4d8;
     letter-spacing:2px;
 }
 
-/* CONTACT BOX */
+/* CONTACT */
 #contactBox{
     margin-top:60px;
-    padding:15px 20px;
+    padding:15px;
     border:1px solid #00b4d8;
     border-radius:12px;
     display:flex;
@@ -134,9 +141,14 @@ button{
     cursor:pointer;
     color:#00b4d8;
     font-weight:bold;
+    transition:0.3s;
 }
 
-/* TELEGRAM ICON */
+#contactBox:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 20px #00b4d8;
+}
+
 #contactBox img{
     width:22px;
     height:22px;
@@ -182,7 +194,6 @@ button{
 <!-- APP -->
 <div id="app">
 
-    <!-- DEV TEXT -->
     <div id="devText">MEHEDI VAI AI SYSTEM DEVELOPER</div>
 
     <div id="result">---</div>
@@ -227,8 +238,9 @@ function login(){
         }
 
     }else{
+
         msg.style.color="#ff4d6d";
-        msg.innerText="Wrong Password!";
+        msg.innerText="❌ Wrong Password! Please contact admin for access";
     }
 }
 
