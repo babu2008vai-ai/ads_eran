@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Game Club</title>
+<style>
+body { font-family: Arial; background:#0f172a; color:white; text-align:center; }
+.box { margin:20px; padding:20px; background:#1e293b; border-radius:10px; }
+input, button { padding:10px; margin:5px; border:none; border-radius:5px; }
+button { background:#22c55e; color:white; }
+.game-btn { display:block; margin:5px; padding:10px; background:#334155; }
+.win { color:lime; }
+.lose { color:red; }
+</style>
+</head>
+
+<body>
+
+<div id="auth">
+<h2>Login / Register</h2>
+<input id="user" placeholder="Username"><br>
+<input id="pass" placeholder="Password" type="password"><br>
+<button onclick="register()">Register</button>
+<button onclick="login()">Login</button>
+</div>
+
+<div id="app" style="display:none;">
+<h2>Balance: <span id="bal"></span></h2>
+
+<div class="box">
+<h3>🎮 Wingo Game</h3>
+<p>Time: <span id="time">30</span>s</p>
+
+<input id="bet" placeholder="Bet amount"><br>
+
+<button onclick="play('big')">Big</button>
+<button onclick="play('small')">Small</button><br>
+<button onclick="play('red')">Red</button>
+<button onclick="play('green')">Green</button>
+
+<h3 id="result"></h3>
+</div>
+
+<div class="box">
+<h3>🎲 Other Games</h3>
+<div id="games"></div>
+</div>
+
+</div>
+
+<script>
+let balance = 1000;
+let currentUser = null;
+
+function saveUser(user, pass){
+ localStorage.setItem(user, JSON.stringify({pass, balance:1000}));
+}
+
+function register(){
+ let u = user.value;
+ let p = pass.value;
+ if(!u || !p) return alert("Fill all");
+ saveUser(u,p);
+ alert("Registered!");
+}
+
+function login(){
+ let u = user.value;
+ let p = pass.value;
+ let data = JSON.parse(localStorage.getItem(u));
+ if(!data || data.pass !== p) return alert("Wrong!");
+ currentUser = u;
+ balance = data.balance;
+ auth.style.display="none";
+ app.style.display="block";
+ updateBal();
+}
+
+function updateBal(){
+ bal.innerText = balance;
+ localStorage.setItem(currentUser, JSON.stringify({pass:pass.value, balance}));
+}
+
+function randomResult(){
+ let num = Math.floor(Math.random()*10);
+ return {
+  num,
+  size: num>=5 ? 'big':'small',
+  color: num%2==0 ? 'red':'green'
+ };
+}
+
+function play(type){
+ let betAmt = parseInt(bet.value);
+ if(betAmt>balance) return alert("Low balance");
+ let r = randomResult();
+
+ balance -= betAmt;
+
+ let win = (type===r.size || type===r.color);
+
+ if(win){
+  balance += betAmt*2;
+  result.innerHTML = `WIN 🎉 Number:${r.num}`; 
+  result.className="win";
+ }else{
+  result.innerHTML = `LOSE ❌ Number:${r.num}`;
+  result.className="lose";
+ }
+
+ updateBal();
+}
+
+let t=30;
+setInterval(()=>{
+ t--;
+ if(t<=0) t=30;
+ time.innerText=t;
+},1000);
+
+// fake 50 games
+for(let i=1;i<=50;i++){
+ let btn=document.createElement("div");
+ btn.className="game-btn";
+ btn.innerText="Game "+i+" (Coming Soon)";
+ games.appendChild(btn);
+}
+</script>
+
+</body>
+</html>
