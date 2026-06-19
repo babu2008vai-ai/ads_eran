@@ -3,88 +3,150 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>System Terminal - Accessing...</title>
+    <title>SYSTEM CRITICAL ERROR</title>
     <style>
-        body {
+        /* পুরো স্ক্রিন লক করার জন্য */
+        html, body {
             background-color: black;
             color: #00ff00;
             font-family: 'Courier New', Courier, monospace;
             padding: 20px;
+            margin: 0;
+            height: 100vh;
+            width: 100vw;
+            box-sizing: border-box;
+            user-select: none;
             overflow: hidden;
+            /* ৫ সেকেন্ডের জন্য টাচ ও ক্লিক ব্লক */
+            pointer-events: none; 
         }
+        
         #terminal {
             width: 100%;
-            height: 90vh;
+            height: 80vh;
             overflow-y: auto;
             white-space: pre-wrap;
         }
-        .error { color: red; }
-        .success { color: yellow; font-weight: bold; font-size: 24px; text-align: center; margin-top: 20px;}
-        .cursor {
-            display: inline-block;
-            background-color: #00ff00;
-            width: 10px;
-            height: 18px;
-            animation: blink 1s infinite;
+        .error { color: #ff3333; font-weight: bold; }
+        .success { 
+            color: #ffffff; 
+            font-weight: bold; 
+            font-size: 28px; 
+            text-align: center; 
+            margin-top: 20px;
+            text-shadow: 0 0 10px red;
+            z-index: 100;
+            position: relative;
         }
-        @keyframes blink {
-            50% { opacity: 0; }
+
+        /* স্ক্রিন গ্লিচ বা কালার চেঞ্জ অ্যানিমেশন */
+        @keyframes glitchColors {
+            0% { background-color: #ff0000; }
+            25% { background-color: #0000ff; }
+            50% { background-color: #00ff00; }
+            75% { background-color: #ffff00; }
+            100% { background-color: #ff00ff; }
+        }
+
+        .glitch-active {
+            animation: glitchColors 0.1s infinite !important;
         }
     </style>
 </head>
 <body>
 
-    <div id="terminal"></div>
-    <span class="cursor"></span>
+    <!-- হ্যাকিং সাউন্ডের জন্য ওয়েব অডিও এপিআই ব্যবহার করা হয়েছে -->
+    <div id="terminal">>>> INITIALIZING MALWARE INJECTION...<br>>>> FREEZING USER INTERFACE...<br></div>
 
     <script>
         const terminal = document.getElementById('terminal');
-        
-        // প্র্যাঙ্ক মেসেজগুলোর লিস্ট (যা স্ক্রিনে দেখাবে)
+        const body = document.body;
+
+        // অডিও জেনারেটর (কোনো এক্সটার্নাল ফাইলের দরকার নেই, ব্রাউজার নিজেই সাউন্ড তৈরি করবে)
+        let audioCtx;
+        function playHackerSound() {
+            if(!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            let osc = audioCtx.createOscillator();
+            let gain = audioCtx.createGain();
+            osc.type = 'sawtooth';
+            osc.frequency.setValueAtTime(Math.random() * 400 + 100, audioCtx.currentTime);
+            gain.gain.setValueAtTime(0.05, audioCtx.currentTime);
+            osc.connect(gain);
+            gain.connect(audioCtx.destination);
+            osc.start();
+            osc.stop(audioCtx.currentTime + 0.08);
+        }
+
+        // ৫ সেকেন্ড পর টাচ বা ক্লিক আনলক হবে
+        setTimeout(() => {
+            body.style.pointerEvents = "auto";
+            terminal.innerHTML += "\n[SYSTEM INFO] Overriding input controls... Unlocked.\n\n";
+        }, 5000);
+
         const lines = [
-            "Connecting to remote server...",
-            "Establishing secure connection via proxy [192.168.1.254]...",
-            "Connection Established.",
-            "Bypassing firewall firewall_v4.2...",
-            "WARNING: Firewall detected an anomaly! Shifting IP address...",
-            "New IP allocated: 10.0.4.112",
-            "Cracking password database...",
-            "Attempt 1: Failed",
-            "Attempt 2: Failed",
-            "Attempt 3: SUCCESS!",
-            "Downloading user_credentials.db [||||||||||||||||] 100%",
-            "Accessing personal gallery...",
-            "Decrypting folder /root/secrets...",
-            "Injecting payload... Done.",
-            "CRITICAL WARNING: SYSTEM HAS BEEN COMPROMISED!"
+            "Connecting to core kernel...",
+            "Exploiting vulnerability CVE-2026-3117...",
+            "Injecting rootkit into System32 / OS Storage...",
+            "WARNING: Threat detected by Android/iOS Defender!",
+            "Counter-measures deployed. Disabling Antivirus...",
+            "Antivirus status: TERMINATED.",
+            "Fetching contacts, SMS, and personal media...",
+            "Uploading sensitive data to anonymous server...",
+            "Encrypting file system [AES-256]...",
+            "Deleting system backup files...",
+            "FINALIZING PROCESS..."
         ];
 
         let index = 0;
+        let soundInterval;
+
+        function startPrank() {
+            // সাউন্ড চালু করা
+            soundInterval = setInterval(playHackerSound, 150);
+            typeLine();
+        }
 
         function typeLine() {
             if (index < lines.length) {
                 let currentLine = lines[index];
-                
-                // যদি লাইনে WARNING থাকে তবে লাল রঙ করার জন্য
-                if (currentLine.includes("WARNING")) {
-                    terminal.innerHTML += `<span class="error">${currentLine}</span>\n`;
+                if (currentLine.includes("WARNING") || currentLine.includes("TERMINATED")) {
+                    terminal.innerHTML += `\n<span class="error">${currentLine}</span>\n`;
                 } else {
-                    terminal.innerHTML += currentLine + "\n";
+                    terminal.innerHTML += "\n" + currentLine + "\n";
                 }
-                
-                // স্ক্রল সবসময় নিচের দিকে রাখার জন্য
-                window.scrollTo(0, document.body.scrollHeight);
-                
                 index++;
-                setTimeout(typeLine, 1200); // প্রতি লাইনের মাঝের গ্যাপ (মিলি-সেকেন্ডে)
+                setTimeout(typeLine, 1000);
             } else {
-                // সব লাইন শেষ হলে বড় করে মেসেজ দেখাবে
-                terminal.innerHTML += `<div class="success">🎯 TARGET DEVICE HACKED SUCCESSFULLY! 😉</div>`;
+                // হ্যাকিং শেষ হলে সাউন্ড থামবে এবং স্ক্রিন কাঁপতে থাকবে
+                clearInterval(soundInterval);
+                body.classList.add('glitch-active');
+                
+                // একটি ভয়ংকর সাইরেন সাউন্ড চালু হবে
+                setInterval(() => {
+                    if(!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+                    let osc = audioCtx.createOscillator();
+                    osc.type = 'sine';
+                    osc.frequency.setValueAtTime(800, audioCtx.currentTime);
+                    osc.connect(audioCtx.destination);
+                    osc.start();
+                    osc.stop(audioCtx.currentTime + 0.2);
+                }, 400);
+
+                terminal.innerHTML = `<div class="success">⚠️ YOUR DEVICE HAS BEEN COMPLETELY DESTROYED! ⚠️<br><br>Just Kidding! 😂<br>টাকা পয়সা কিচ্ছু লাগবে না, বন্ধুদের সাথে মজা করার জন্য এটা বানানো!</div>`;
             }
         }
 
-        // প্র্যাঙ্ক শুরু করার জন্য
-        setTimeout(typeLine, 500);
+        // ব্রাউজারের সিকিউরিটির কারণে স্ক্রিনে প্রথম ক্লিকের পর সাউন্ড ও প্র্যাঙ্ক শুরু হবে
+        window.addEventListener('click', () => {
+            if(index === 0) {
+                startPrank();
+            }
+        });
+        window.addEventListener('touchstart', () => {
+            if(index === 0) {
+                startPrank();
+            }
+        });
     </script>
 </body>
 </html>
