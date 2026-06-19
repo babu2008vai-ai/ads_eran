@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Terminal - Accessing...</title>
+    <style>
+        body {
+            background-color: black;
+            color: #00ff00;
+            font-family: 'Courier New', Courier, monospace;
+            padding: 20px;
+            overflow: hidden;
+        }
+        #terminal {
+            width: 100%;
+            height: 90vh;
+            overflow-y: auto;
+            white-space: pre-wrap;
+        }
+        .error { color: red; }
+        .success { color: yellow; font-weight: bold; font-size: 24px; text-align: center; margin-top: 20px;}
+        .cursor {
+            display: inline-block;
+            background-color: #00ff00;
+            width: 10px;
+            height: 18px;
+            animation: blink 1s infinite;
+        }
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="terminal"></div>
+    <span class="cursor"></span>
+
+    <script>
+        const terminal = document.getElementById('terminal');
+        
+        // প্র্যাঙ্ক মেসেজগুলোর লিস্ট (যা স্ক্রিনে দেখাবে)
+        const lines = [
+            "Connecting to remote server...",
+            "Establishing secure connection via proxy [192.168.1.254]...",
+            "Connection Established.",
+            "Bypassing firewall firewall_v4.2...",
+            "WARNING: Firewall detected an anomaly! Shifting IP address...",
+            "New IP allocated: 10.0.4.112",
+            "Cracking password database...",
+            "Attempt 1: Failed",
+            "Attempt 2: Failed",
+            "Attempt 3: SUCCESS!",
+            "Downloading user_credentials.db [||||||||||||||||] 100%",
+            "Accessing personal gallery...",
+            "Decrypting folder /root/secrets...",
+            "Injecting payload... Done.",
+            "CRITICAL WARNING: SYSTEM HAS BEEN COMPROMISED!"
+        ];
+
+        let index = 0;
+
+        function typeLine() {
+            if (index < lines.length) {
+                let currentLine = lines[index];
+                
+                // যদি লাইনে WARNING থাকে তবে লাল রঙ করার জন্য
+                if (currentLine.includes("WARNING")) {
+                    terminal.innerHTML += `<span class="error">${currentLine}</span>\n`;
+                } else {
+                    terminal.innerHTML += currentLine + "\n";
+                }
+                
+                // স্ক্রল সবসময় নিচের দিকে রাখার জন্য
+                window.scrollTo(0, document.body.scrollHeight);
+                
+                index++;
+                setTimeout(typeLine, 1200); // প্রতি লাইনের মাঝের গ্যাপ (মিলি-সেকেন্ডে)
+            } else {
+                // সব লাইন শেষ হলে বড় করে মেসেজ দেখাবে
+                terminal.innerHTML += `<div class="success">🎯 TARGET DEVICE HACKED SUCCESSFULLY! 😉</div>`;
+            }
+        }
+
+        // প্র্যাঙ্ক শুরু করার জন্য
+        setTimeout(typeLine, 500);
+    </script>
+</body>
+</html>
