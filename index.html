@@ -1,0 +1,1379 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ad দেখুন, টাকা আয় করুন! বাংলাদেশের সেরা Ad দেখে আয়ের প্ল্যাটফর্ম">
+    <meta name="keywords" content="ad watch, earn money, bangladesh, online income, ad দেখে আয়">
+    <title>💰 AdWatch BD - Ad দেখুন, টাকা আয় করুন!</title>
+
+    <!-- ============ AD NETWORK CODES START ============ -->
+
+    <!-- 1. Adsterra Popunder Ad -->
+    <script type="text/javascript" src="https://www.effectivecpmnetwork.com/ntbaqzdb?key=7681ef7a1b425010f4571a422a7f2f75"></script>
+
+    <!-- 2. Adsterra Social Bar Ad (First) -->
+    <script src="https://pl30110711.effectivecpmnetwork.com/28/57/36/28573663e0aeef140c29ae45a9d4bf12.js"></script>
+
+    <!-- 4. Adsterra Social Bar Ad (Second) -->
+    <script src="https://pl30110713.effectivecpmnetwork.com/d0/d3/61/d0d361ebef6d096f13c06f332c9a3829.js"></script>
+
+    <!-- ============ AD NETWORK CODES END ============ -->
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+    <style>
+        /* ===== Global Reset ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0f0f1a;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #1a1a2e; }
+        ::-webkit-scrollbar-thumb { background: #e94560; border-radius: 10px; }
+
+        /* ===== Navbar ===== */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(15, 15, 26, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 10px 0;
+            border-bottom: 1px solid #e9456033;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #e94560;
+        }
+
+        .logo i {
+            font-size: 1.8rem;
+            animation: spin 3s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            color: #ccc;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover { color: #e94560; }
+
+        .nav-buttons { display: flex; gap: 10px; }
+
+        .btn-login {
+            padding: 8px 20px;
+            background: transparent;
+            border: 2px solid #e94560;
+            color: #e94560;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+
+        .btn-login:hover { background: #e94560; color: white; }
+
+        .btn-signup {
+            padding: 8px 20px;
+            background: linear-gradient(135deg, #e94560, #c23152);
+            border: none;
+            color: white;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+
+        .btn-signup:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(233, 69, 96, 0.4);
+        }
+
+        .user-panel {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .user-name { color: #e94560; font-weight: bold; }
+
+        .user-balance {
+            background: linear-gradient(135deg, #00b894, #00a381);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        .btn-logout {
+            padding: 5px 15px;
+            background: #333;
+            border: none;
+            color: #ccc;
+            border-radius: 15px;
+            cursor: pointer;
+            font-size: 0.8rem;
+        }
+
+        .hamburger {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #e94560;
+        }
+
+        /* ===== Hero Section ===== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 100px 20px;
+            background: radial-gradient(ellipse at center, #1a1a3e 0%, #0f0f1a 70%);
+        }
+
+        .hero-content { max-width: 800px; }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #e94560, #f5a623);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p { font-size: 1.2rem; color: #aaa; margin-bottom: 40px; }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .stat { text-align: center; }
+        .stat h3 { font-size: 2rem; color: #f5a623; }
+        .stat p { color: #888; font-size: 0.9rem; }
+
+        .btn-hero {
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            background: linear-gradient(135deg, #e94560, #c23152);
+            border: none;
+            color: white;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(233, 69, 96, 0.7); }
+            70% { box-shadow: 0 0 0 20px rgba(233, 69, 96, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(233, 69, 96, 0); }
+        }
+
+        .btn-hero:hover { transform: translateY(-3px); }
+
+        /* ===== Section Title ===== */
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 40px;
+            color: #f5a623;
+        }
+
+        /* ===== How It Works ===== */
+        .how-it-works {
+            padding: 80px 20px;
+            background: #12121f;
+        }
+
+        .steps-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+        }
+
+        .step {
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            border: 1px solid #e9456022;
+            transition: all 0.3s;
+        }
+
+        .step:hover {
+            transform: translateY(-10px);
+            border-color: #e94560;
+            box-shadow: 0 10px 30px rgba(233, 69, 96, 0.2);
+        }
+
+        .step-icon { font-size: 2.5rem; margin-bottom: 15px; }
+        .step h3 { margin-bottom: 10px; color: #e94560; }
+        .step p { color: #888; font-size: 0.9rem; }
+
+        /* ===== Ad Banner Between Sections ===== */
+        .ad-banner-container {
+            max-width: 728px;
+            margin: 20px auto;
+            text-align: center;
+            padding: 10px;
+            background: #1a1a2e;
+            border-radius: 10px;
+            border: 1px dashed #e9456033;
+            min-height: 90px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .ad-banner-container .ad-label {
+            color: #555;
+            font-size: 0.75rem;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        /* ===== Dashboard ===== */
+        .dashboard {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .ad-stats {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .ad-stat-card {
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            padding: 25px 40px;
+            border-radius: 15px;
+            text-align: center;
+            border: 1px solid #e9456033;
+            min-width: 180px;
+        }
+
+        .ad-stat-card i { font-size: 2rem; color: #e94560; margin-bottom: 10px; }
+        .ad-stat-card h3 { font-size: 1.8rem; color: #f5a623; }
+        .ad-stat-card p { color: #888; font-size: 0.85rem; }
+
+        /* ===== Ad Grid ===== */
+        .ad-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .ad-card {
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid #e9456022;
+            transition: all 0.3s;
+        }
+
+        .ad-card:hover {
+            transform: translateY(-5px);
+            border-color: #e94560;
+            box-shadow: 0 10px 25px rgba(233, 69, 96, 0.2);
+        }
+
+        .ad-card-header {
+            padding: 20px;
+            background: linear-gradient(135deg, #e9456022, #f5a62322);
+            text-align: center;
+        }
+
+        .ad-card-header .ad-icon { font-size: 2.5rem; margin-bottom: 10px; }
+
+        .ad-card-body { padding: 20px; }
+        .ad-card-body h3 { margin-bottom: 8px; color: #fff; }
+        .ad-card-body .ad-duration { color: #888; font-size: 0.9rem; margin-bottom: 5px; }
+        .ad-card-body .ad-reward { color: #00b894; font-size: 1.1rem; font-weight: bold; margin-bottom: 15px; }
+
+        .btn-watch {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, #e94560, #c23152);
+            border: none;
+            color: white;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+
+        .btn-watch:hover { opacity: 0.9; transform: translateY(-2px); }
+        .btn-watch:disabled { background: #333; cursor: not-allowed; transform: none; }
+        .ad-completed { background: #00b894 !important; }
+
+        .login-required {
+            text-align: center;
+            padding: 60px 20px;
+            display: none;
+        }
+
+        .login-required i { font-size: 3rem; color: #e94560; margin-bottom: 20px; }
+        .login-required h3 { margin-bottom: 10px; color: #ccc; }
+        .login-required p { color: #888; margin-bottom: 20px; }
+
+        /* ===== Ad Watching Modal ===== */
+        .ad-watch-content { max-width: 600px; text-align: center; }
+
+        .ad-watch-header { margin-bottom: 20px; }
+        .ad-watch-header h2 { color: #e94560; margin-bottom: 20px; }
+
+        .timer-circle {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 4px solid #e94560;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 10px;
+            font-size: 2rem;
+            font-weight: bold;
+            color: #f5a623;
+            position: relative;
+        }
+
+        .timer-circle::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 4px solid transparent;
+            border-top-color: #f5a623;
+            animation: countdown 1s linear infinite;
+        }
+
+        @keyframes countdown {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .ad-display { margin: 20px 0; }
+        .ad-placeholder { padding: 30px; }
+        .ad-placeholder i { font-size: 3rem; color: #e94560; margin-bottom: 15px; }
+
+        .ad-banner {
+            background: #222;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 15px 0;
+            min-height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .ad-content-area { text-align: center; color: #888; }
+
+        .progress-bar {
+            width: 100%;
+            height: 6px;
+            background: #333;
+            border-radius: 10px;
+            margin: 15px 0;
+            overflow: hidden;
+        }
+
+        .progress {
+            height: 100%;
+            background: linear-gradient(90deg, #e94560, #f5a623);
+            width: 0%;
+            border-radius: 10px;
+            transition: width 1s linear;
+        }
+
+        .ad-instruction { color: #888; margin-bottom: 15px; }
+
+        .btn-claim {
+            padding: 12px 40px;
+            background: linear-gradient(135deg, #00b894, #00a381);
+            border: none;
+            color: white;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+        }
+
+        .btn-claim:disabled { background: #333; cursor: not-allowed; }
+        .btn-claim:not(:disabled):hover { transform: scale(1.05); }
+
+        /* ===== Withdraw Section ===== */
+        .withdraw-section {
+            padding: 80px 20px;
+            background: #12121f;
+        }
+
+        .withdraw-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .withdraw-info { display: flex; flex-direction: column; gap: 20px; }
+
+        .withdraw-card {
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            padding: 25px;
+            border-radius: 15px;
+            border: 1px solid #e9456022;
+        }
+
+        .withdraw-card h3 { color: #e94560; margin-bottom: 8px; }
+        .withdraw-card p { color: #888; font-size: 0.9rem; }
+
+        .withdraw-form {
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid #e9456022;
+        }
+
+        .withdraw-form h3 { color: #f5a623; margin-bottom: 20px; text-align: center; }
+
+        .form-group { margin-bottom: 18px; }
+        .form-group label { display: block; margin-bottom: 6px; color: #ccc; font-size: 0.9rem; }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 12px 15px;
+            background: #0f0f1a;
+            border: 1px solid #333;
+            border-radius: 10px;
+            color: white;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus { outline: none; border-color: #e94560; }
+
+        .btn-withdraw {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, #f5a623, #e8961e);
+            border: none;
+            color: white;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .btn-withdraw:hover { transform: translateY(-2px); }
+
+        .btn-submit {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, #e94560, #c23152);
+            border: none;
+            color: white;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: bold;
+            transition: all 0.3s;
+            margin-top: 5px;
+        }
+
+        .btn-submit:hover { transform: translateY(-2px); }
+
+        /* ===== Referral Section ===== */
+        .referral-section {
+            padding: 80px 20px;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .referral-content p { color: #aaa; margin-bottom: 20px; }
+
+        .referral-bonus {
+            background: linear-gradient(135deg, #f5a623, #e8961e);
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+        }
+
+        .referral-bonus h3 { font-size: 1.5rem; color: #000; }
+        .referral-bonus p { color: #222; margin-bottom: 0; }
+
+        .referral-link-box {
+            display: flex;
+            gap: 10px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .referral-link-box input {
+            flex: 1;
+            padding: 12px;
+            background: #1a1a2e;
+            border: 1px solid #333;
+            border-radius: 10px;
+            color: #ccc;
+            font-size: 0.9rem;
+        }
+
+        .referral-link-box button {
+            padding: 12px 20px;
+            background: #e94560;
+            border: none;
+            color: white;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+            white-space: nowrap;
+        }
+
+        .referral-link-box button:hover { background: #c23152; }
+
+        /* ===== Leaderboard ===== */
+        .leaderboard-section {
+            padding: 80px 20px;
+            background: #12121f;
+        }
+
+        .leaderboard-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .leaderboard-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px 20px;
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            border-radius: 12px;
+            margin-bottom: 10px;
+            border: 1px solid #e9456022;
+            transition: all 0.3s;
+        }
+
+        .leaderboard-item:hover {
+            border-color: #e94560;
+            transform: translateX(5px);
+        }
+
+        .leaderboard-rank {
+            font-size: 1.5rem;
+            font-weight: bold;
+            min-width: 40px;
+            text-align: center;
+        }
+
+        .leaderboard-rank.gold { color: #FFD700; }
+        .leaderboard-rank.silver { color: #C0C0C0; }
+        .leaderboard-rank.bronze { color: #CD7F32; }
+
+        .leaderboard-info { flex: 1; }
+        .leaderboard-info h4 { color: #fff; }
+        .leaderboard-info p { color: #888; font-size: 0.85rem; }
+
+        .leaderboard-amount {
+            color: #00b894;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        /* ===== Modal ===== */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+            animation: fadeIn 0.3s;
+        }
+
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        .modal-content {
+            background: #1a1a2e;
+            margin: 5% auto;
+            padding: 30px;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 450px;
+            border: 1px solid #e9456033;
+            position: relative;
+            animation: slideDown 0.3s;
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 1.8rem;
+            color: #888;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .close-modal:hover { color: #e94560; }
+
+        .modal-content h2 { text-align: center; color: #e94560; margin-bottom: 25px; }
+
+        .modal-switch { text-align: center; margin-top: 15px; color: #888; }
+        .modal-switch a { color: #e94560; text-decoration: none; }
+
+        /* ===== Toast ===== */
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 10px;
+            border: 1px solid #e94560;
+            z-index: 3000;
+            transition: transform 0.4s;
+            font-size: 0.95rem;
+        }
+
+        .toast.show { transform: translateX(-50%) translateY(0); }
+
+        /* ===== Footer ===== */
+        .footer {
+            background: #0a0a15;
+            padding: 40px 20px 20px;
+            border-top: 1px solid #e9456022;
+        }
+
+        .footer-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-section h3 { color: #e94560; margin-bottom: 10px; }
+
+        .footer-section p,
+        .footer-section a {
+            color: #888;
+            font-size: 0.9rem;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .footer-section a:hover { color: #e94560; }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #222;
+            color: #555;
+            font-size: 0.85rem;
+        }
+
+        /* ===== Notification Bell ===== */
+        .notification-bell {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #e94560, #c23152);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1.5rem;
+            z-index: 999;
+            animation: bellRing 2s infinite;
+            box-shadow: 0 5px 20px rgba(233, 69, 96, 0.5);
+        }
+
+        @keyframes bellRing {
+            0% { transform: rotate(0); }
+            10% { transform: rotate(15deg); }
+            20% { transform: rotate(-15deg); }
+            30% { transform: rotate(0); }
+            100% { transform: rotate(0); }
+        }
+
+        /* ===== Responsive ===== */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background: #1a1a2e;
+                flex-direction: column;
+                padding: 20px;
+                gap: 15px;
+                border-bottom: 2px solid #e94560;
+            }
+
+            .nav-links.active { display: flex; }
+            .nav-buttons { display: none; }
+            .user-panel { display: none !important; }
+            .hamburger { display: block; }
+            .hero h1 { font-size: 1.8rem; }
+            .hero-stats { flex-direction: column; gap: 15px; }
+            .withdraw-container { grid-template-columns: 1fr; }
+            .ad-stats { flex-direction: column; align-items: center; }
+            .modal-content { margin: 10% auto; width: 95%; }
+            .referral-link-box { flex-direction: column; }
+            .ad-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Notification Bell -->
+    <div class="notification-bell" onclick="showModal('dailyBonusModal')">
+        🔔
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-coins"></i>
+                <span>AdWatch BD</span>
+            </div>
+            <div class="nav-links" id="navLinks">
+                <a href="#home">🏠 হোম</a>
+                <a href="#how-it-works">📋 কিভাবে কাজ করে</a>
+                <a href="#earnings">💰 আয়</a>
+                <a href="#leaderboard">🏆 লিডারবোর্ড</a>
+                <a href="#withdraw">💳 উত্তোলন</a>
+            </div>
+            <div class="nav-buttons" id="navButtons">
+                <button class="btn-login" onclick="showModal('loginModal')">লগইন</button>
+                <button class="btn-signup" onclick="showModal('signupModal')">সাইন আপ</button>
+            </div>
+            <div class="user-panel" id="userPanel" style="display:none;">
+                <span class="user-name" id="displayName"></span>
+                <span class="user-balance">💰 ৳<span id="displayBalance">0</span></span>
+                <button class="btn-logout" onclick="logout()">লগআউট</button>
+            </div>
+            <div class="hamburger" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>📺 Ad দেখুন, টাকা আয় করুন!</h1>
+            <p>প্রতিদিন মাত্র কয়েক মিনিট Ad দেখে আয় করুন। সহজ, নিরাপদ এবং বিশ্বস্ত।</p>
+            <div class="hero-stats">
+                <div class="stat">
+                    <h3>১০,০০০+</h3>
+                    <p>সक्रिय ইউজার</p>
+                </div>
+                <div class="stat">
+                    <h3>৳৫ লাখ+</h3>
+                    <p>মোট পেমেন্ট</p>
+                </div>
+                <div class="stat">
+                    <h3>৫০০+</h3>
+                    <p>দৈনিক Ad</p>
+                </div>
+            </div>
+            <button class="btn-hero" onclick="showModal('signupModal')">
+                🚀 এখনই শুরু করুন - ফ্রি!
+            </button>
+        </div>
+    </section>
+
+    <!-- ========== AD BANNER 1 (Top Banner 468x60) ========== -->
+    <div class="ad-banner-container">
+        <div>
+            <span class="ad-label">📢 বিজ্ঞাপন</span>
+            <div id="ad-banner-top">
+                <!-- 3. Your Adsterra 468x60 Banner Ad Code -->
+                <script type="text/javascript">
+                  atOptions = {
+                    'key' : 'd204cdd511360aa9f71e123718ee1bcb',
+                    'format' : 'iframe',
+                    'height' : 60,
+                    'width' : 468,
+                    'params' : {}
+                  };
+                </script>
+                <script type="text/javascript" src="https://www.highperformanceformat.com/d204cdd511360aa9f71e123718ee1bcb/invoke.js"></script>
+            </div>
+        </div>
+    </div>
+
+    <!-- How It Works -->
+    <section class="how-it-works" id="how-it-works">
+        <h2 class="section-title">📋 কিভাবে কাজ করে?</h2>
+        <div class="steps-container">
+            <div class="step">
+                <div class="step-icon">1️⃣</div>
+                <h3>রেজিস্ট্রেশন করুন</h3>
+                <p>ফ্রি অ্যাকাউন্ট তৈরি করুন মাত্র ১ মিনিটে</p>
+            </div>
+            <div class="step">
+                <div class="step-icon">2️⃣</div>
+                <h3>Ad দেখুন</h3>
+                <p>প্রতিদিন নতুন Ad পাবেন, ক্লিক করে দেখুন</p>
+            </div>
+            <div class="step">
+                <div class="step-icon">3️⃣</div>
+                <h3>পয়েন্ট জমা করুন</h3>
+                <p>প্রতিটি Ad এর জন্য টাকা পাবেন আপনার ওয়াлеটে</p>
+            </div>
+            <div class="step">
+                <div class="step-icon">4️⃣</div>
+                <h3>টাকা তুলুন</h3>
+                <p>bKash/Nagad এ সরাসরি টাকা তুলুন</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== AD BANNER 2 (Middle Native Container Ad) ========== -->
+    <div class="ad-banner-container" style="min-height: auto; max-width: 100%;">
+        <div style="width: 100%;">
+            <span class="ad-label">📢 বিজ্ঞাপন</span>
+            <div id="ad-banner-mid">
+                <!-- 5. Your Adsterra Native Banner/Container Code -->
+                <script async="async" data-cfasync="false" src="https://pl30110714.effectivecpmnetwork.com/8c734ad6c388d22c4c5bcee5d93c9907/invoke.js"></script>
+                <div id="container-8c734ad6c388d22c4c5bcee5d93c9907"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dashboard -->
+    <section class="dashboard" id="earnings">
+        <h2 class="section-title">💰 আজকের উপলব্ধ Ad সমূহ</h2>
+
+        <div class="ad-stats">
+            <div class="ad-stat-card">
+                <i class="fas fa-eye"></i>
+                <h3 id="todayWatched">0</h3>
+                <p>আজ দেখা হয়েছে</p>
+            </div>
+            <div class="ad-stat-card">
+                <i class="fas fa-clock"></i>
+                <h3 id="todayRemaining">10</h3>
+                <p>বাকি আছে</p>
+            </div>
+            <div class="ad-stat-card">
+                <i class="fas fa-money-bill-wave"></i>
+                <h3>৳<span id="todayEarned">0</span></h3>
+                <p>আজ আয়</p>
+            </div>
+            <div class="ad-stat-card">
+                <i class="fas fa-fire"></i>
+                <h3 id="streakDays">0</h3>
+                <p>দিন স্ট্রিক</p>
+            </div>
+        </div>
+
+        <div class="ad-grid" id="adGrid"></div>
+
+        <div class="login-required" id="loginRequired">
+            <i class="fas fa-lock"></i>
+            <h3>Ad দেখতে লগইন করুন</h3>
+            <p>আয় করতে প্রথমে অ্যাকাউন্ট তৈরি করুন</p>
+            <button class="btn-signup" onclick="showModal('signupModal')">সাইন আপ করুন</button>
+        </div>
+    </section>
+
+    <!-- Ad Watching Modal -->
+    <div class="modal ad-modal" id="adWatchModal">
+        <div class="modal-content ad-watch-content">
+            <div class="ad-watch-header">
+                <h2>📺 Ad দেখছেন...</h2>
+                <div class="ad-timer">
+                    <div class="timer-circle" id="timerCircle">
+                        <span id="timerText">30</span>
+                    </div>
+                    <p>সেকেন্ড বাকি</p>
+                </div>
+            </div>
+            <div class="ad-display" id="adDisplay">
+                <div class="ad-placeholder">
+                    <i class="fas fa-ad"></i>
+                    <h3 id="adTitle">Ad লোড হচ্ছে...</h3>
+                    <div class="ad-banner">
+                        <div class="ad-content-area" id="adContentArea">
+                            <div id="ad-in-modal">
+                                <p>📢 <strong>বিজ্ঞাপন</strong></p>
+                                <p style="color:#555; margin-top:10px;">(পপআপ উইন্ডো বা নতুন ট্যাব ওপেন হলে সেটি বন্ধ করবেন না, ব্যাকগ্রাউন্ডে চালু রাখুন)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="progress-bar">
+                <div class="progress" id="adProgress"></div>
+            </div>
+            <p class="ad-instruction" id="adInstruction">⏳ Ad দেখুন, সময় শেষ হলে টাকা যোগ হবে...</p>
+            <button class="btn-claim" id="btnClaim" onclick="claimReward()" disabled>
+                ✅ টাকা নিন
+            </button>
+        </div>
+    </div>
+
+    <!-- Leaderboard -->
+    <section class="leaderboard-section" id="leaderboard">
+        <h2 class="section-title">🏆 আজকের টপ আয়কারী</h2>
+        <div class="leaderboard-container" id="leaderboardContainer">
+            <div class="leaderboard-item">
+                <div class="leaderboard-rank gold">🥇</div>
+                <div class="leaderboard-info">
+                    <h4>রাহাত হোসেন</h4>
+                    <p>ঢাকা • ৫০ টি Ad দেখেছেন</p>
+                </div>
+                <div class="leaderboard-amount">৳১৫০</div>
+            </div>
+            <div class="leaderboard-item">
+                <div class="leaderboard-rank silver">🥈</div>
+                <div class="leaderboard-info">
+                    <h4>নাফিসা আক্তার</h4>
+                    <p>চট্টগ্রাম • ৪৫ টি Ad দেখেছেন</p>
+                </div>
+                <div class="leaderboard-amount">৳১৩৫</div>
+            </div>
+            <div class="leaderboard-item">
+                <div class="leaderboard-rank bronze">🥉</div>
+                <div class="leaderboard-info">
+                    <h4>তানভীর আহমেদ</h4>
+                    <p>সিলেট • ৪০ টি Ad দেখেছেন</p>
+                </div>
+                <div class="leaderboard-amount">৳১২০</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Withdrawal Section -->
+    <section class="withdraw-section" id="withdraw">
+        <h2 class="section-title">💳 টাকা তুলুন</h2>
+        <div class="withdraw-container">
+            <div class="withdraw-info">
+                <div class="withdraw-card">
+                    <h3>📱 bKash</h3>
+                    <p>সর্বনিম্ন: ৳৫০</p>
+                    <p>সময়: ২৪ ঘণ্টা</p>
+                </div>
+                <div class="withdraw-card">
+                    <h3>📱 Nagad</h3>
+                    <p>সর্বনিম্ন: ৳৫০</p>
+                    <p>সময়: ২৪ ঘণ্টা</p>
+                </div>
+            </div>
+            <div class="withdraw-form">
+                <h3>টাকা তোলার আবেদন</h3>
+                <div class="form-group">
+                    <label>পেমেন্ট মেথড:</label>
+                    <select id="withdrawMethod">
+                        <option value="bkash">bKash</option>
+                        <option value="nagad">Nagad</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>অ্যাকাউন্ট নম্বর:</label>
+                    <input type="text" id="withdrawNumber" placeholder="01XXXXXXXXX">
+                </div>
+                <div class="form-group">
+                    <label>পরিমাণ (৳):</label>
+                    <input type="number" id="withdrawAmount" placeholder="৳৫০ বা তার বেশি" min="50">
+                </div>
+                <button class="btn-withdraw" onclick="requestWithdraw()">
+                    💸 টাকা তোলার আবেদন করুন
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Referral Section -->
+    <section class="referral-section">
+        <h2 class="section-title">👥 রেফার করুন, বেশি আয় করুন!</h2>
+        <div class="referral-content">
+            <p>প্রতিটি বন্ধুকে রেফার করলে পাবেন:</p>
+            <div class="referral-bonus">
+                <h3>🎉 প্রতি রেফারে ৳১০ বোনাস!</h3>
+                <p>এবং আপনার বন্ধুর আয়ের ১০% আপনি পাবেন!</p>
+            </div>
+            <div class="referral-link-box">
+                <input type="text" id="referralLink" readonly value="লগইন করুন প্রথমে">
+                <button onclick="copyReferral()">📋 কপি করুন</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>💰 AdWatch BD</h3>
+                <p>বাংলাদেশের সবচেয়ে বিশ্বস্ত Ad দেখে আয়ের প্ল্যাটফর্ম</p>
+            </div>
+            <div class="footer-section">
+                <h3>লিংক</h3>
+                <a href="#">শর্তাবলী</a>
+                <a href="#">গোপনীয়তা নীতি</a>
+                <a href="#">যোগাযোগ</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© ২০২৬ AdWatch BD - সর্বস্বত্ব সংরক্ষিত</p>
+        </div>
+    </footer>
+
+    <!-- Signup Modal -->
+    <div class="modal" id="signupModal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('signupModal')">&times;</span>
+            <h2>📝 সাইন আপ করুন</h2>
+            <form id="signupForm" onsubmit="signup(event)">
+                <div class="form-group">
+                    <label>আপনার নাম:</label>
+                    <input type="text" id="signupName" placeholder="নাম লিখুন" required>
+                </div>
+                <div class="form-group">
+                    <label>মোবাইল নম্বর:</label>
+                    <input type="tel" id="signupPhone" placeholder="01XXXXXXXXX" required>
+                </div>
+                <div class="form-group">
+                    <label>পাসওয়ার্ড:</label>
+                    <input type="password" id="signupPassword" placeholder="কমপক্ষে ۶ অক্ষর" required>
+                </div>
+                <div class="form-group">
+                    <label>রেফার কোড (ঐচ্ছিক):</label>
+                    <input type="text" id="signupReferral" placeholder="রেফার কোড">
+                </div>
+                <button type="submit" class="btn-submit">✅ অ্যাকাউন্ট তৈরি করুন</button>
+            </form>
+            <p class="modal-switch">
+                ইতিমধ্যে অ্যাকাউন্ট আছে?
+                <a href="#" onclick="closeModal('signupModal');showModal('loginModal')">লগইন করুন</a>
+            </p>
+        </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('loginModal')">&times;</span>
+            <h2>🔐 লগইন করুন</h2>
+            <form id="loginForm" onsubmit="login(event)">
+                <div class="form-group">
+                    <label>মোবাইল নম্বর:</label>
+                    <input type="tel" id="loginPhone" placeholder="01XXXXXXXXX" required>
+                </div>
+                <div class="form-group">
+                    <label>পাসওয়ার্ড:</label>
+                    <input type="password" id="loginPassword" placeholder="পাসওয়ার্ড" required>
+                </div>
+                <button type="submit" class="btn-submit">🔓 লগইন করুন</button>
+            </form>
+            <p class="modal-switch">
+                অ্যাকাউন্ট নেই?
+                <a href="#" onclick="closeModal('loginModal');showModal('signupModal')">সাইন আপ করুন</a>
+            </p>
+        </div>
+    </div>
+
+    <!-- Daily Bonus Modal -->
+    <div class="modal" id="dailyBonusModal">
+        <div class="modal-content" style="text-align:center;">
+            <span class="close-modal" onclick="closeModal('dailyBonusModal')">&times;</span>
+            <h2>🎁 দৈনিক বোনাস!</h2>
+            <div style="font-size:4rem; margin:20px 0;">🎉</div>
+            <h3 style="color:#f5a623; margin-bottom:15px;">প্রতিদিন লগইন করে ফ্রি বোনাস নিন!</h3>
+            <p style="color:#888; margin-bottom:20px;">প্রতিদিন ৳২ বোনাস পাবেন</p>
+            <button class="btn-submit" onclick="claimDailyBonus()" id="dailyBonusBtn">
+                🎁 বোনাস নিন
+            </button>
+        </div>
+    </div>
+
+    <!-- Toast -->
+    <div class="toast" id="toast">
+        <span id="toastMessage"></span>
+    </div>
+
+    <script>
+        // Data Management
+        function generateId() { return 'user_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9); }
+        function generateReferralCode() { return 'REF' + Math.random().toString(36).substr(2, 6).toUpperCase(); }
+        function getUsers() { return JSON.parse(localStorage.getItem('adwatch_users') || '[]'); }
+        function saveUsers(users) { localStorage.setItem('adwatch_users', JSON.stringify(users)); }
+        
+        function getCurrentUser() {
+            const userId = localStorage.getItem('adwatch_current_user');
+            if (!userId) return null;
+            return getUsers().find(u => u.id === userId) || null;
+        }
+
+        function updateCurrentUser(userData) {
+            const users = getUsers();
+            const index = users.findIndex(u => u.id === userData.id);
+            if (index !== -1) { users[index] = userData; saveUsers(users); }
+        }
+
+        // Ads Data Base
+        const availableAds = [
+            { id: 1, title: "🛍️ Daraz Shopping Super Sale", duration: 15, reward: 2.0, icon: "🛍️", category: "Shopping" },
+            { id: 2, title: "📱 Grameenphone Special Data Offer", duration: 20, reward: 3.0, icon: "📱", category: "Telecom" },
+            { id: 3, title: "🍔 Foodpanda Exclusive Voucher", duration: 10, reward: 1.5, icon: "🍔", category: "Food" },
+            { id: 4, title: "🎮 Mobile Legends New Update", duration: 25, reward: 4.0, icon: "🎮", category: "Gaming" },
+            { id: 5, title: "👗 Yellow Winter Fashion Trend", duration: 15, reward: 2.0, icon: "👗", category: "Fashion" }
+        ];
+
+        // Auth Operations
+        function signup(event) {
+            event.preventDefault();
+            const name = document.getElementById('signupName').value.trim();
+            const phone = document.getElementById('signupPhone').value.trim();
+            const password = document.getElementById('signupPassword').value;
+            const referralCode = document.getElementById('signupReferral').value.trim();
+
+            if (!/^01[3-9]\d{8}$/.test(phone)) { showToast("❌ সঠিক মোবাইল নম্বর দিন"); return; }
+            if (password.length < 6) { showToast("❌ পাসওয়ার্ড কমপক্ষে ৬ অক্ষর দিন"); return; }
+
+            const users = getUsers();
+            if (users.find(u => u.phone === phone)) { showToast("❌ অ্যাকাউন্ট অলরেডি আছে!"); return; }
+
+            const newUser = {
+                id: generateId(), name, phone, password, balance: 10, totalEarned: 10,
+                todayWatched: 0, todayEarned: 0, lastActiveDate: new Date().toDateString(),
+                watchedAds: [], referralCode: generateReferralCode(), referredBy: referralCode || null,
+                referralCount: 0, withdrawalHistory: [], streakDays: 1, dailyBonusClaimed: false
+            };
+
+            if (referralCode) {
+                const referrer = users.find(u => u.referralCode === referralCode);
+                if (referrer) { referrer.balance += 10; referrer.totalEarned += 10; referrer.referralCount += 1; }
+            }
+
+            users.push(newUser); saveUsers(users);
+            localStorage.setItem('adwatch_current_user', newUser.id);
+            closeModal('signupModal');
+            showToast("✅ অ্যাকাউন্ট তৈরি সফল! ৳১০ ফ্রি বোনাস!");
+            updateUI();
+        }
+
+        function login(event) {
+            event.preventDefault();
+            const phone = document.getElementById('loginPhone').value.trim();
+            const password = document.getElementById('loginPassword').value;
+
+            const user = getUsers().find(u => u.phone === phone && u.password === password);
+            if (!user) { showToast("❌ নম্বর বা পাসওয়ার্ড ভুল!"); return; }
+
+            if (user.lastActiveDate !== new Date().toDateString()) {
+                user.todayWatched = 0; user.todayEarned = 0; user.watchedAds = []; user.dailyBonusClaimed = false;
+                user.streakDays = (user.lastActiveDate === new Date(Date.now() - 86400000).toDateString()) ? (user.streakDays + 1) : 1;
+                user.lastActiveDate = new Date().toDateString();
+                updateCurrentUser(user);
+            }
+
+            localStorage.setItem('adwatch_current_user', user.id);
+            closeModal('loginModal');
+            showToast(`✅ স্বাগতম ${user.name}!`);
+            updateUI();
+        }
+
+        function logout() {
+            localStorage.removeItem('adwatch_current_user');
+            showToast("👋 লগআউট সম্পন্ন হয়েছে");
+            updateUI();
+        }
+
+        // Interface Controllers
+        function updateUI() {
+            const user = getCurrentUser();
+            if (user) {
+                document.getElementById('navButtons').style.display = 'none';
+                document.getElementById('userPanel').style.display = 'flex';
+                document.getElementById('displayName').textContent = `👤 ${user.name}`;
+                document.getElementById('displayBalance').textContent = user.balance.toFixed(1);
+                document.getElementById('todayWatched').textContent = user.todayWatched;
+                document.getElementById('todayRemaining').textContent = Math.max(0, 10 - user.todayWatched);
+                document.getElementById('todayEarned').textContent = user.todayEarned.toFixed(1);
+                document.getElementById('streakDays').textContent = user.streakDays;
+                document.getElementById('referralLink').value = window.location.href.split('?')[0] + "?ref=" + user.referralCode;
+                document.getElementById('loginRequired').style.display = 'none';
+                loadAds(user);
+                if (!user.dailyBonusClaimed && user.todayWatched === 0) setTimeout(() => showModal('dailyBonusModal'), 1500);
+            } else {
+                document.getElementById('navButtons').style.display = 'flex';
+                document.getElementById('userPanel').style.display = 'none';
+                document.getElementById('adGrid').innerHTML = '';
+                document.getElementById('loginRequired').style.display = 'block';
+            }
+        }
+
+        function loadAds(user) {
+            const adGrid = document.getElementById('adGrid'); adGrid.innerHTML = '';
+            if (user.todayWatched >= 10) {
+                adGrid.innerHTML = `<div style="grid-column:1/-1;text-align:center;padding:30px;">🎉 আজকের সব Ad শেষ! কাল আবার আসুন।</div>`;
+                return;
+            }
+            availableAds.forEach(ad => {
+                const card = document.createElement('div'); card.className = 'ad-card';
+                card.innerHTML = `
+                    <div class="ad-card-header"><div class="ad-icon">${ad.icon}</div></div>
+                    <div class="ad-card-body">
+                        <h3>${ad.title}</h3>
+                        <p class="ad-duration">⏱️ ${ad.duration} সেকেন্ড</p>
+                        <p class="ad-reward">💰 ৳${ad.reward}</p>
+                        <button class="btn-watch" onclick="startWatching(${ad.id})">📺 Ad দেখুন</button>
+                    </div>`;
+                adGrid.appendChild(card);
+            });
+        }
+
+        // Ad Player Trigger
+        let currentAdId = null; let timerInterval = null;
+        function startWatching(adId) {
+            const user = getCurrentUser();
+            if (user.todayWatched >= 10) { showToast("❌ দৈনিক লিমিট শেষ!"); return; }
+            const ad = availableAds.find(a => a.id === adId);
+            currentAdId = adId;
+
+            document.getElementById('adTitle').textContent = ad.title;
+            document.getElementById('timerText').textContent = ad.duration;
+            document.getElementById('adProgress').style.width = '0%';
+            document.getElementById('btnClaim').disabled = true;
+            showModal('adWatchModal');
+
+            // Trigger Popunder Ad link simultaneously to reward publisher
+            window.open('https://www.effectivecpmnetwork.com/ntbaqzdb?key=7681ef7a1b425010f4571a422a7f2f75', '_blank');
+
+            let timeLeft = ad.duration;
+            timerInterval = setInterval(() => {
+                timeLeft--;
+                document.getElementById('timerText').textContent = timeLeft;
+                document.getElementById('adProgress').style.width = ((ad.duration - timeLeft) / ad.duration * 100) + '%';
+                if (timeLeft <= 0) {
+                    clearInterval(timerInterval);
+                    document.getElementById('timerText').textContent = '✅';
+                    document.getElementById('btnClaim').disabled = false;
+                    document.getElementById('adInstruction').textContent = "🎉 বোনাস প্রস্তুত! নিচে ক্লিক করুন।";
+                }
+            }, 1000);
+        }
+
+        function claimReward() {
+            const user = getCurrentUser(); const ad = availableAds.find(a => a.id === currentAdId);
+            user.balance += ad.reward; user.totalEarned += ad.reward; user.todayEarned += ad.reward; user.todayWatched += 1;
+            updateCurrentUser(user); closeModal('adWatchModal');
+            showToast(`🎉 ৳${ad.reward} আপনার একাউন্টে যোগ হয়েছে!`);
+            updateUI();
+        }
+
+        function claimDailyBonus() {
+            const user = getCurrentUser();
+            if (user.dailyBonusClaimed) return;
+            user.balance += 2; user.totalEarned += 2; user.dailyBonusClaimed = true;
+            updateCurrentUser(user); closeModal('dailyBonusModal');
+            showToast("🎁 ৳২ দৈনিক বোনাস যুক্ত হয়েছে!");
+            updateUI();
+        }
+
+        function requestWithdraw() {
+            const user = getCurrentUser();
+            const method = document.getElementById('withdrawMethod').value;
+            const number = document.getElementById('withdrawNumber').value.trim();
+            const amount = parseFloat(document.getElementById('withdrawAmount').value);
+            if (!/^01[3-9]\d{8}$/.test(number)) { showToast("❌ সঠিক নম্বর দিন"); return; }
+            if (isNaN(amount) || amount < 50) { showToast("❌ সর্বনিম্ন উইথড্র ৳৫০"); return; }
+            if (amount > user.balance) { showToast("❌ পর্যাপ্ত ব্যালেন্স নেই"); return; }
+
+            user.balance -= amount;
+            user.withdrawalHistory.push({ method, number, amount, date: new Date().toLocaleDateString(), status: 'Pending' });
+            updateCurrentUser(user); showToast("✅ আবেদন সফল! ২৪ ঘন্টায় পেমেন্ট পাবেন।");
+            updateUI();
+        }
+
+        function copyReferral() {
+            const link = document.getElementById('referralLink'); link.select();
+            document.execCommand('copy'); showToast("📋 লিংক কপি হয়েছে!");
+        }
+
+        function showModal(id) { document.getElementById(id).style.display = 'block'; }
+        function closeModal(id) { document.getElementById(id).style.display = 'none'; if(timerInterval) clearInterval(timerInterval); }
+        function showToast(msg) { const t = document.getElementById('toast'); document.getElementById('toastMessage').textContent = msg; t.classList.add('show'); setTimeout(() => t.classList.remove('show'), 3000); }
+        function toggleMenu() { document.getElementById('navLinks').classList.toggle('active'); }
+
+        document.addEventListener('DOMContentLoaded', updateUI);
+    </script>
+</body>
+</html>
